@@ -7,9 +7,8 @@ unset USER PASSWORD
 echo $?
 
 args=`getopt U:w: $*`
-if test $? != 0
-     then
-        echo " Usage is ./load_all.sh  [-U username -w password] "
+if [ $# -lt 4 ]; then
+        echo " Usage is ./run.sh  [-U username -w password] "
         return 1
 fi
 set -- $args
