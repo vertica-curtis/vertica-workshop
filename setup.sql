@@ -33,12 +33,14 @@ CREATE TABLE if not exists public.weather_station_raw
 
 truncate table weather_station_raw ;
 
---ALTER SESSION SET AWSRegion='us-west-2';
+\set t_pwd `pwd`
+
+\set input_file '''':t_pwd'/isd-history2.txt'''
 --copy weather_station_raw from 's3://verticaworkshop/rawdata/isd-history.txt' fixedwidth colsizes(7,6,30,5,3,6,8,9,8,9,8) trim ' ' ;
 
 ALTER SESSION SET AWSRegion='us-west-1';
 --copy weather_station_raw from 's3://verticaworkshopwest1/rawdata/isd-history2.txt' fixedwidth colsizes(7,6,30,5,3,6,8,9,8,9,8) trim ' ' ;
-copy weather_station_raw from 'isd-history2.txt' fixedwidth colsizes(7,6,30,5,3,6,8,9,8,9,8) trim ' ' ;
+copy weather_station_raw from :input_file fixedwidth colsizes(7,6,30,5,3,6,8,9,8,9,8) trim ' ' ;
 
 
 CREATE TABLE if not exists state_province_codes (
@@ -47,6 +49,8 @@ state_province_cd char(2)
 
 truncate table state_province_codes ;
 --copy state_province_codes from 's3://verticaworkshopwest1/rawdata/state_codes.txt' delimiter ',' ;
+\set input_file '''':t_pwd'/state_codes.txt'''
+copy state_province_codes from :input_file delimiter ',' ;
 
 
 CREATE TABLE if not exists country_codes (
@@ -56,7 +60,8 @@ country_cd char(2)
 truncate table country_codes ;
 
 --copy country_codes from 'country-list.txt' fixedwidth colsizes(12,80) trim ' ' ;
-copy state_province_codes from 'state_codes.txt' delimiter ',' ;
+\set input_file '''':t_pwd'/country-list.txt'''
+copy country_codes from :input_file fixedwidth colsizes(12,80) trim ' ' ;
 
 
 
