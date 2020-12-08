@@ -143,13 +143,13 @@ station_nbr
 from weather_fact_raw ;
 
 
-copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_2010_to_2019.txt' delimiter '|' ;
-copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_2000_to_2009.txt' delimiter '|' ;
-copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_1990_to_1999.txt' delimiter '|' ;
-copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_1980_to_1989.txt' delimiter '|' ;
-copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_1970_to_1979.txt' delimiter '|' ;
-copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_1955_to_1969.txt' delimiter '|' ;
-copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_1929_to_1954.txt' delimiter '|' ;
-takes around 2-2.5 minutes to load all of it
+--copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_2010_to_2019.txt' delimiter '|' ;
+--copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_2000_to_2009.txt' delimiter '|' ;
+--copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_1990_to_1999.txt' delimiter '|' ;
+--copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_1980_to_1989.txt' delimiter '|' ;
+--copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_1970_to_1979.txt' delimiter '|' ;
+--copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_1955_to_1969.txt' delimiter '|' ;
+--copy weather_fact_raw from 's3://verticaworkshopwest1/rawdata/weather_fact_raw_1929_to_1954.txt' delimiter '|' ;
+--takes around 2-2.5 minutes to load all of it
 
 
