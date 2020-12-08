@@ -52,7 +52,7 @@ country_cd char(2)
 ,country_description varchar(100) ) ;
 
 truncate table country_codes ;
--
+
 
 CREATE TABLE if not exists public.weather_fact_raw
 (
