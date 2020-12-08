@@ -8,7 +8,7 @@ echo $?
 
 args=`getopt U:w: $*`
 if [ $# -lt 4 ]; then
-        echo " Usage is ./run.sh  [-U username -w password] "
+        echo " Usage is ./load_all.sh  [-U username -w password] "
         return 1
 fi
 set -- $args
